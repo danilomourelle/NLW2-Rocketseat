@@ -11,7 +11,7 @@
 }
 
 .logo-container img {
-  height: 100rem;
+  height: 10rem;
 }
 
 .hero-image {
@@ -30,7 +30,7 @@
   margin-top: 0.8rem;
 }
 
-.buttons-container{
+.buttons-container {
   display: flex;
   justify-content: center;
   margin: 3.2rem 0;
@@ -97,8 +97,8 @@
     max-width: 1100px;
 
     display: grid;
-    grid-template-columns: 350px 1fr;
-    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-rows: 350px 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     grid-template-areas: 
       "logo hero hero"
       "buttons buttons total"
@@ -123,12 +123,12 @@
 
   .hero-image{
     grid-area: hero;
-    justify-self: flex-end;
+    justify-self: end;
   }
 
   .buttons-container{
     grid-area: buttons;
-    justify-self: flex-start; /* verificar se não é justify-content */
+    justify-content: flex-start; /* verificar se não é justify-content */
   }
 
   .buttons-container a {
@@ -137,6 +137,6 @@
 
   .total-connections{
     grid-area: total;
-    justify-self: flex-end;
+    justify-self: end;
   }
 }
