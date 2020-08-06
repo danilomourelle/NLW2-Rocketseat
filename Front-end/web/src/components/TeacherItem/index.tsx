@@ -1,35 +1,57 @@
 import React from 'react'
 
 import whatsapp from '../../assets/images/icons/whatsapp.svg'
+import api from '../../services/api'
 
 import './styles.css'
 
+export interface Teacher {
+  id: number,
+  avatar: string,
+  bio: string,
+  cost: number,
+  name: string,
+  subject: string,
+  whatsapp: string,
+  user_id: string
+}
 
-function TeacherItem() {
+interface TeacherItemProps {
+  teacher: Teacher
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+
+  const createNewConnection = () => {
+    api.post('connections', {
+      user_id: teacher.user_id
+    })
+  }
+
   return (
     <article className="teacher-item">
       <header>
-        <img src="https://avatars1.githubusercontent.com/u/59848875?s=460&u=47f31197624ea195a858abc5eed72f6ddc8ba11f&v=4" alt="Danilo Mourelle" />
+        <img src={teacher.avatar} alt={teacher.name} />
         <div>
-          <strong>Danilo Mourelle</strong>
-          <span>Física</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
-      <p>
-        Subtitulo
-          <br /><br />
-          Web Fullstack Developer using React in Front-end and NodeJs in Back-end. I've already worked with industrial robots programming and studied Alzheimer Disease.
-          </p>
+      <p>{teacher.bio}</p>
 
       <footer>
         <p>
           Preço/hora
-              <strong>R$ 75,00</strong>
+              <strong>{`R$ ${teacher.cost}`}</strong>
         </p>
-        <button type="button">
+        <a
+          target="_blank"
+          href={`https://wa.me/${teacher.whatsapp}`}
+          onClick={createNewConnection}
+        >
           <img src={whatsapp} alt="Entrar em contato" />
               Entrar em contato
-            </button>
+            </a>
       </footer>
     </article>
   )
