@@ -66,7 +66,7 @@ function TeacherForm() {
       <main>
         <form onSubmit={handleCreateClass}>
           <fieldset>
-            <legend>Seus dados</legend>
+            <div>Seus dados</div>
             <Input
               name="name"
               value={name}
@@ -91,7 +91,7 @@ function TeacherForm() {
           </fieldset>
 
           <fieldset>
-            <legend>Sobre a aula</legend>
+            <div>Sobre a aula</div>
             <Select
               name="subject"
               value={subject}
@@ -120,7 +120,7 @@ function TeacherForm() {
 
           <fieldset>
             <div>
-              <span>Horários disponíveis</span>
+              Horários disponíveis
               <button type="button" onClick={addNewScheduleItem}>
                 + Novo Horário
               </button>
