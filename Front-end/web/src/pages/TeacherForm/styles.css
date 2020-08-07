@@ -26,20 +26,20 @@
   margin-top: 6.4rem;
 }
 
-#page-teacher-form  main fieldset legend {
+#page-teacher-form  main fieldset > div:first-child {
   width: 100%;
   font: 700 2.4rem Archivo;
   color: var(--color-text-title);
   margin-bottom: 2.4rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding-bottom: 1.6rem;
   border-bottom: 1px solid var(--color-line-in-white);
 }
 
-#page-teacher-form  main fieldset legend button {
-  background-color: none;
+#page-teacher-form  main fieldset > div:first-child button {
+  background-color: transparent;
   border: 0;
   color: var(--color-primary);
   font: 700 1.6rem Archivo;
@@ -47,7 +47,7 @@
   transition: color 0.2s;
 }
 
-#page-teacher-form  main fieldset legend button:hover {
+#page-teacher-form  main fieldset > div:first-child button:hover {
   color: var(--color-primary-dark);
 }
 
