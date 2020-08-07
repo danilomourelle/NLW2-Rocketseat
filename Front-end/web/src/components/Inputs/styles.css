@@ -22,14 +22,33 @@
   font: 1.6rem Archivo;
 }
 
-.input-block:focus-within::after {
-  width: calc(100% - 3.2rem);
+.input-block::after {
   height: 2px;
   content: '';
   background-color: var(--color-primary-light);
   position: absolute;
-  left: 1.6rem;
-  right: 1.6rem;
+  bottom:0;
+}
+
+@keyframes input {
+  from {
+    width: 0;
+    left: 50%;
+  }
+  to {
+    width: calc(100% - 3.2rem);
+    left: 1.6rem;
+  }
+}
+
+.input-block:focus-within::after {
+  height: 2px;
+  content: '';
+  background-color: var(--color-primary-light);
+  position: absolute;
+  animation-name: input;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
   bottom:0;
 }
 
